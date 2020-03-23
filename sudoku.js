@@ -54,3 +54,4 @@ while(emptySpaces > 0){
 
 return sudoku;
 }	
+console.log(sudokuSolver(sudoku));	
