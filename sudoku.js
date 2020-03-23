@@ -11,7 +11,9 @@ var sudoku = [
 function sudokuSolver(sudoku){
 var nonPossibilities = {},
 impossibleNumbers,
-
+emptySpaces = 81;
+while(emptySpaces > 0){
+    emptySpaces =0;
 
     for(var v= 0;v< sudoku.length; v++){
         for(var h = 0; h < sudoku.length; h++){
@@ -32,3 +34,23 @@ impossibleNumbers,
                         }
                     }
                 }
+                impossibleNumbers= Object.keys(nonPossibilities);//unique possible from non possible
+                if(impossibleNumbers.length === 8){//if condition for impossiblenum
+                    for(var i = 0; i < 10; i++){//for loop 1-9 num
+                        if(impossibleNumbers.indexOf(i.toString()) < 0){
+                            sudoku[v][h] = i;
+                        }
+                    }
+                }
+                else{
+                    emptySpaces++;
+                }
+            }
+
+        }
+
+    }
+}
+
+return sudoku;
+}	
