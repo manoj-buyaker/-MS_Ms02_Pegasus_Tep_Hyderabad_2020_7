@@ -25,3 +25,10 @@ impossibleNumbers,
                         nonPossibilities[sudoku[i][h]] = true;
                     }
                 }
+                for(var vgrid = Math.floor(v/ 3) * 3; vgrid < Math.floor(v / 3) * 3 + 3; vgrid++){
+                    for(var hgrid = Math.floor(h / 3) * 3; hgrid < Math.floor(h / 3) * 3 + 3; hgrid++){
+                        if(sudoku[vgrid][hgrid]){
+                            nonPossibilities[sudoku[vgrid][hgrid]] = true;
+                        }
+                    }
+                }
